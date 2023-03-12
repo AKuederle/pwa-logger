@@ -15,7 +15,7 @@ const submit = async (event: Event) => {
     const date = formData.get('date') as string;
 
     const timestamp = new Date(`${date}T${time}`).getTime();
-    // create uuid4
+    // TODO: Verify that this uuid thing works (github copilot generated it)
     const id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
@@ -65,5 +65,5 @@ const submit = async (event: Event) => {
     <button type="submit" class="btn variant-filled">Submit</button>
 
 </form>
-<h2>List of Notes</h2>
+<h2>List of Notes 2</h2>
 <NoteList />
