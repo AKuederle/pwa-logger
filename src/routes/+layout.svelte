@@ -11,18 +11,16 @@
 	import { onMount } from 'svelte';
 	import { pwaInfo } from 'virtual:pwa-info';
 
-
-	let ReloadPrompt
+	let ReloadPrompt;
 	onMount(async () => {
-		pwaInfo && (ReloadPrompt = (await import('$lib/ReloadPrompt.svelte')).default)
-	})
+		pwaInfo && (ReloadPrompt = (await import('$lib/ReloadPrompt.svelte')).default);
+	});
 
-	$: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : ''
-
+	$: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : '';
 </script>
 
 <svelte:head>
-    {@html webManifest}
+	{@html webManifest}
 </svelte:head>
 
 <slot />

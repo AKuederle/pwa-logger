@@ -1,16 +1,16 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { SvelteKitPWA } from '@vite-pwa/sveltekit'
+import { SvelteKitPWA } from '@vite-pwa/sveltekit';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
 	define: {
 		__DATE__: `'${new Date().toISOString()}'`,
-		__RELOAD_SW__: false,
+		__RELOAD_SW__: false
 	},
 
 	plugins: [
 		sveltekit(),
-	    SvelteKitPWA({      
+		SvelteKitPWA({
 			registerType: 'autoUpdate',
 			manifest: {
 				// TODO: Update once I understand which icons are needed
@@ -25,13 +25,13 @@ export default defineConfig({
 						sizes: '512x512',
 						type: 'image/png'
 					}
-					]
+				]
 			},
 			devOptions: {
 				enabled: true,
 				type: 'module',
-				navigateFallback: '/',
-			},
+				navigateFallback: '/'
+			}
 		})
 	]
 });
