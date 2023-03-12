@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '../app.postcss';
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 
 	// This contains the bulk of Skeletons required styles:
@@ -18,7 +17,7 @@
 		pwaInfo && (ReloadPrompt = (await import('$lib/ReloadPrompt.svelte')).default)
 	})
 
-	$: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : ''  
+	$: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : ''
 
 </script>
 
