@@ -26,12 +26,6 @@ export default defineConfig({
 						type: 'image/png'
 					}
 					]
-				},
-			injectManifest: {
-				globPatterns: ['client/**/*.{js,css,ico,png,svg,webp,woff,woff2}']
-	
-				
-
 			},
 			devOptions: {
 				enabled: true,
