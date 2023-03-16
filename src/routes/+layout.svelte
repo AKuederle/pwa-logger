@@ -11,7 +11,7 @@
 	import { onMount } from 'svelte';
 	import { pwaInfo } from 'virtual:pwa-info';
 
-	let ReloadPrompt;
+	let ReloadPrompt: ConstructorOfATypedSvelteComponent;
 	onMount(async () => {
 		pwaInfo && (ReloadPrompt = (await import('$lib/ReloadPrompt.svelte')).default);
 	});

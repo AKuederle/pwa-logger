@@ -2,16 +2,23 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
 import { defineConfig } from 'vite';
 
+const dev = process.argv.includes('dev');
+
 export default defineConfig({
 	define: {
 		__DATE__: `'${new Date().toISOString()}'`,
-		__RELOAD_SW__: false
+		__RELOAD_SW__: false,
+		'process.env.NODE_ENV': process.env.NODE_ENV === 'production' ? '"production"' : '"development"',
 	},
 
 	plugins: [
 		sveltekit(),
 		SvelteKitPWA({
+			mode: dev ? 'development' : 'production',
 			registerType: 'autoUpdate',
+			workbox: {
+				globPatterns: ['client/**/*.{js,css,ico,png,svg,webp,woff,woff2}']
+			},
 			manifest: {
 				// TODO: Update once I understand which icons are needed
 				icons: [
@@ -31,7 +38,8 @@ export default defineConfig({
 				enabled: true,
 				type: 'module',
 				navigateFallback: '/'
-			}
+			},
+			kit: {}
 		})
 	]
 });
