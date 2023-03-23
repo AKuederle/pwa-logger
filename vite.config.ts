@@ -20,6 +20,7 @@ export default defineConfig({
 			mode: dev ? 'development' : 'production',
 			registerType: 'autoUpdate',
 			base: "./",
+			scope: "/",
 			manifest: {
 				// TODO: Update once I understand which icons are needed
 				icons: [
