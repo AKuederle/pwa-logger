@@ -23,9 +23,6 @@ const config = {
 		serviceWorker: {
 			register: false,
 		},
-		paths: {
-			base: dev ? '' : ''
-		}
 	}
 };
 
