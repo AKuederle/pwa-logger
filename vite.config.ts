@@ -19,7 +19,7 @@ export default defineConfig({
 		SvelteKitPWA({
 			mode: dev ? 'development' : 'production',
 			registerType: 'autoUpdate',
-			scope: "/pwa-logger/",
+			base: "./",
 			manifest: {
 				// TODO: Update once I understand which icons are needed
 				icons: [
