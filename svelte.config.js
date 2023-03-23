@@ -24,7 +24,7 @@ const config = {
 			register: false,
 		},
 		paths: {
-			base: dev ? '' : '/pwa-logger'
+			base: dev ? '' : ''
 		}
 	}
 };
